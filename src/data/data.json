@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "text": "Finish the essay collaboration",
+    "dueDate": "Today",
+    "completed": false,
+    "subTasks": [
+      { "id": 1, "text": "Research topic", "completed": false },
+      { "id": 2, "text": "Write introduction", "completed": false },
+      { "id": 3, "text": "Conclusion", "completed": false }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "Send collaboration files to Jerusha",
+    "dueDate": "Sunday",
+    "completed": false,
+    "subTasks": []
+  },
+  {
+    "id": 3,
+    "text": "His Surrogate Wife",
+    "dueDate": "Thursday",
+    "completed": false,
+    "subTasks": [
+      { "id": 1, "text": "Proofread", "completed": false },
+      { "id": 2, "text": "Format document", "completed": false }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Read next chapter of the book in Danish",
+    "dueDate": "",
+    "completed": false,
+    "subTasks": [{ "id": 1, "text": "Read chapter", "completed": false }]
+  },
+  {
+    "id": 5,
+    "text": "Do the math for next Monday",
+    "dueDate": "Monday",
+    "completed": false,
+    "subTasks": []
+  },
+  {
+    "id": 6,
+    "text": "Send the finished assignment",
+    "dueDate": "",
+    "completed": true,
+    "subTasks": []
+  },
+  {
+    "id": 7,
+    "text": "Read English book chapter 5",
+    "dueDate": "Yesterday",
+    "completed": true,
+    "subTasks": []
+  }
+]

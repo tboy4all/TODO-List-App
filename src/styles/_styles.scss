@@ -1,0 +1,291 @@
+/**  GENERAL STYLE **/
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 50%;
+  margin: 20px auto 0;
+  padding: 10px;
+}
+
+/** ADD BUTTON STYLE  **/
+.input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  input {
+    padding-left: 45px;
+    height: 36px;
+    width: 92%;
+    background-color: transparent;
+    border: 2px solid $border-color;
+    @include border-radius(20px);
+    color: $text-color;
+    font-size: 16px;
+  }
+
+  button {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+
+    .icon {
+      color: #333;
+      font-size: 16px;
+      background-color: $button-color;
+      padding: 3px;
+      @include border-radius(5px);
+    }
+  }
+}
+
+/** TASK BUTTON **/
+.task-details {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  gap: 10px;
+  position: relative;
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #333;
+  @include border-radius(50px);
+
+  .task-details-button {
+    display: flex;
+  }
+}
+
+/** CUSTOM CHECKBOX **/
+.custom-checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: -14px;
+    right: 20px;
+    height: 25px;
+    width: 25px;
+    border: 3px solid $checkbox-color;
+    @include border-radius(25%);
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: none;
+    }
+  }
+
+  &:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  input:checked ~ .checkmark {
+    background-color: $checkbox-color;
+
+    &:after {
+      display: block;
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid #000;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+/**  TASK INFO  **/
+.task-content {
+  display: flex;
+  gap: 15px;
+}
+
+/**  DELETE BUTTON **/
+.delete-task {
+  width: fit-content;
+  display: none;
+  background-color: $completed-color;
+  outline: none;
+  border: none;
+  padding: 5px;
+  @include border-radius(10px);
+}
+
+.task-details:hover .delete-task {
+  display: block;
+}
+
+.arrow {
+  background-color: transparent;
+  size: 24px;
+  border: none;
+  outline: none;
+  color: $text-color;
+}
+
+/**  COMPLETED STYLE  **/
+.completed {
+  text-decoration: line-through;
+}
+
+/**  SUBTASK STYLE  **/
+.subtask-container {
+  background-color: #333;
+  width: 85%;
+  @include border-radius(20px);
+  padding: 10px;
+  margin-left: 10%;
+}
+
+.subtask-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subtask-list-content {
+  background-color: #757171;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  @include border-radius(20px);
+
+  button {
+    color: $text-color;
+    background-color: $completed-color;
+    outline: none;
+    border: none;
+    padding: 5px;
+    @include border-radius(10px);
+  }
+}
+
+.add-subtask {
+  max-width: 90%;
+  margin-bottom: 5px;
+}
+
+// @media (max-width: 670px) {
+//   .app {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+
+//   .custom-checkbox .checkmark {
+//     position: absolute;
+//     top: -14px;
+//     right: 0px;
+//     height: 15px;
+//     width: 15px;
+//     border: 3px solid $checkbox-color;
+//     @include border-radius(25%);
+//   }
+
+//   .custom-checkbox .checkmark:after {
+//     left: 3px;
+//     top: 0px;
+//     width: 5px;
+//     height: 10px;
+//     border: solid black;
+//     border-width: 0 3px 3px 0;
+//     transform: rotate(45deg);
+//   }
+// }
+
+@media (max-width: 670px) {
+  .app {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .custom-checkbox .checkmark {
+    top: -7px;
+    right: 0;
+    height: 15px;
+    width: 15px;
+    border: 3px solid $checkbox-color;
+    @include border-radius(50%);
+  }
+
+  .custom-checkbox .checkmark:after {
+    left: 3px;
+    top: 0;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  .task-details {
+    grid-template-columns: 1fr 6fr 1fr;
+    gap: 5px;
+  }
+
+  .input-container input {
+    width: 100%;
+    padding-left: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .custom-checkbox .checkmark {
+    top: -10px;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    border: 3px solid $checkbox-color;
+    @include border-radius(50%);
+  }
+
+  .custom-checkbox .checkmark:after {
+    left: 5px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  .task-details {
+    grid-template-columns: 1fr 6fr 1fr;
+    gap: 5px;
+  }
+
+  .input-container input {
+    width: 100%;
+    padding-left: 45px;
+  }
+}
